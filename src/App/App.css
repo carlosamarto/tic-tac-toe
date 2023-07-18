@@ -15,27 +15,29 @@ body {
 }
 
 .board {
-	gap: 2.4rem;
 	width: 100%;
+	gap: 1.6rem;
 	display: flex;
 	margin: 0 auto;
 	padding: 2.4rem;
-	max-width: 1024px;
+	max-width: 32rem;
 	min-height: 100vh;
-	align-items: center;
 	flex-direction: column;
 	justify-content: center;
 }
 .board__title {
 	line-height: 1;
 	color: #c1cfda;
-	font-size: 6.4rem;
+	font-size: 4.8rem;
 	font-weight: bold;
+}
+.board__title--results {
+	text-align: center;
 }
 .board__button {
 	cursor: pointer;
 	color: #c1cfda;
-	font-weight: bold;
+	line-height: 1.2;
 	font-size: 2.4rem;
 	padding: 1.2rem 2.4rem;
 	background-color: transparent;
@@ -54,19 +56,27 @@ body {
 .board__turns {
 	gap: 0.8rem;
 	display: flex;
-	justify-content: center;
+	align-items: center;
 }
 .board__turns .square {
-	width: 4.8rem;
-	height: 4.8rem;
-	font-size: 3.2rem;
+	border: none;
+	width: 3.2rem;
+	height: 3.2rem;
+	line-height: 1.2;
+	font-size: 2.4rem;
 	pointer-events: none;
+}
+.board__text {
+	line-height: 1.2;
+	color: #c1cfda;
+	font-size: 2.4rem;
 }
 
 .square {
+	width: auto;
+	height: 8rem;
 	display: grid;
-	width: 9.2rem;
-	height: 9.2rem;
+	line-height: 1;
 	cursor: pointer;
 	color: #c1cfda;
 	font-size: 4.8rem;
@@ -74,48 +84,46 @@ body {
 	border: 0.2rem solid #c1cfda;
 	transition: all ease-in-out 0.2s;
 }
-.square:hover {
-	color: #03191e;
-	background-color: #c1cfda;
+.square--selected {
+	color: #c1cfda;
+	background-color: #941c2f;
 }
 .square--checked {
 	color: #03191e;
 	background-color: #c1cfda;
 }
-.square--selected {
-	color: #941c2f;
-	border-color: #941c2f;
-}
 
-.winner {
-	gap: 2.4rem;
+.results {
+	gap: 1.6rem;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
 }
-.winner .square {
-	width: 4.8rem;
-	height: 4.8rem;
+.results .square {
+	width: 3.2rem;
+	height: 3.2rem;
+	line-height: 1.2;
 	color: #20a4f3;
-	font-size: 3.2rem;
+	font-size: 2.4rem;
 	pointer-events: none;
 	border-color: #20a4f3;
 }
-.winner__title {
-	line-height: 1;
-	color: #c1cfda;
-	font-size: 4.8rem;
+.results__title {
+	line-height: 1.3;
+	color: #20a4f3;
+	font-size: 3.2rem;
 	font-weight: bold;
 }
-.winner__header {
-	gap: 1.6rem;
+.results__header {
+	gap: 0.8rem;
 	display: flex;
 	align-items: center;
 }
-.winner__button {
+.results__button {
 	cursor: pointer;
 	color: #c1cfda;
+	line-height: 1.2;
 	font-weight: bold;
 	font-size: 2.4rem;
 	padding: 1.2rem 2.4rem;
@@ -123,7 +131,7 @@ body {
 	border: 0.2rem solid #c1cfda;
 	transition: all ease-in-out 0.2s;
 }
-.winner__button:hover {
+.results__button:hover {
 	color: #03191e;
 	background-color: #c1cfda;
 }
