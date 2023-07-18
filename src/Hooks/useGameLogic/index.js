@@ -2,7 +2,7 @@ import { useState } from "react";
 import confetti from "canvas-confetti";
 import { TURNS } from "../../Utils/Constants";
 import { WINNER_COMBOS } from "../../Utils/Constants";
-import { saveGameToStorage, resetGameStorage } from "../../Utils/storage";
+import { saveGameToStorage, resetGameStorage } from "../../Utils/Storage";
 
 export function useGameLogic() {
 	const [results, setResults] = useState(null);
