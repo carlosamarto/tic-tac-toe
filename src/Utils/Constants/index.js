@@ -1,7 +1,7 @@
 // Turns
 export const TURNS = {
-	X: "X",
-	O: "O",
+	X: "✖",
+	O: "◯",
 };
 
 // Position to be the winner
