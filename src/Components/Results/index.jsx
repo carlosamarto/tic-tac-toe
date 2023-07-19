@@ -1,6 +1,7 @@
 import { Square } from "../Square";
 
 export function Results({ resetGame, results }) {
+	// Render UI Component
 	return (
 		<>
 			<section className="results">

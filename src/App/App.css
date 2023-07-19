@@ -1,3 +1,4 @@
+/* General Styles */
 * {
 	margin: 0;
 	padding: 0;
@@ -14,6 +15,7 @@ body {
 	background-color: #03191e;
 }
 
+/* Board */
 .board {
 	width: 100%;
 	gap: 1.6rem;
@@ -72,6 +74,7 @@ body {
 	font-size: 2.4rem;
 }
 
+/* Square */
 .square {
 	width: auto;
 	height: 8rem;
@@ -93,6 +96,7 @@ body {
 	background-color: #c1cfda;
 }
 
+/* Results */
 .results {
 	gap: 1.6rem;
 	display: flex;

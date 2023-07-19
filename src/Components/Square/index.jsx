@@ -1,4 +1,5 @@
 export const Square = ({ children, index, isSelected, updateBoard, checked }) => {
+	// Render UI Component
 	return (
 		<div
 			onClick={() => updateBoard(index)}
