@@ -3,7 +3,7 @@
 <div align="center">
    <h3 align="center">Tic Tac Toe Game</h3>
 
-   <p align="center">Tic Tac Toe Game in React using useEffect and LocalStorage.</p>
+   <p align="center">Tic Tac Toe Game in React using useEffect and LocalStorage, from Midudev Courses.</p>
 </div>
 
 ## 💼 Used technologies
