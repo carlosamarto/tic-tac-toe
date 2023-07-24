@@ -1,13 +1,14 @@
 import { Square } from "../Square";
+import PropTypes from "prop-types";
 
-export function Results({ resetGame, results }) {
+function Results({ resetGame, results, winner }) {
 	// Render UI Component
 	return (
 		<>
 			<section className="results">
 				<header className="results__header">
 					<h2 className="results__title">{results === false ? "Draw" : "Win:"}</h2>
-					{results && <Square>{results}</Square>}
+					{results && <Square>{winner}</Square>}
 				</header>
 
 				<footer className="results__footer">
@@ -19,3 +20,12 @@ export function Results({ resetGame, results }) {
 		</>
 	);
 }
+
+// Define prop types for the Results component
+Results.propTypes = {
+	resetGame: PropTypes.func.isRequired,
+	results: PropTypes.bool,
+	winner: PropTypes.string.isRequired,
+};
+
+export { Results };

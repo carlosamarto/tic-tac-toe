@@ -7,14 +7,14 @@ import { useGameLogic } from "../Hooks/useGameLogic";
 // App Component
 function App() {
 	// Call the custom hook to get the game logics
-	const { board, turns, results, resetGame, updateBoard } = useGameLogic();
+	const { board, turns, results, winner, resetGame, updateBoard } = useGameLogic();
 
 	return (
 		<main className="board">
 			<h1 className={`board__title ${results !== null ? "board__title--results" : ""}`}>Tic Tac Toe</h1>
 
 			{/* If results is different than null the game is over either a draw o someone win */}
-			{results === null ? (
+			{winner === "" ? (
 				<>
 					<section className="board__turns">
 						<p className="board__text">Turn:</p>
@@ -38,7 +38,7 @@ function App() {
 					</button>
 				</>
 			) : (
-				<Results resetGame={resetGame} results={results} />
+				<Results resetGame={resetGame} results={results} winner={winner} />
 			)}
 		</main>
 	);

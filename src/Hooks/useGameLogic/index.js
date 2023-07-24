@@ -5,20 +5,26 @@ import { WINNER_COMBOS } from "../../Utils/Constants";
 import { saveGameToStorage, resetGameStorage } from "../../Utils/Storage";
 
 // Custom hook for managing the game logic
-export function useGameLogic() {
+const useGameLogic = () => {
 	// State variables using React's useState hook
 	const [results, setResults] = useState(null); // To keep track of game results (null for ongoing game, 'X' or 'O' for winner, and false for a tie)
+
+	// Set the winner
+	const [winner, setWinner] = useState("");
 
 	// Initialize the current turn from localStorage if available, otherwise start with 'X'
 	const [turns, setTurns] = useState(() => {
 		const turnsFromStorage = window.localStorage.getItem("turn");
+
 		return turnsFromStorage ?? TURNS.X;
 	});
 
 	// Initialize the game board from localStorage if available, otherwise start with an empty board
 	const [board, setBoard] = useState(() => {
 		const boardFromStorage = window.localStorage.getItem("board");
+
 		if (boardFromStorage) return JSON.parse(boardFromStorage);
+
 		return Array(9).fill(null);
 	});
 
@@ -44,6 +50,7 @@ export function useGameLogic() {
 		// Save the updated game state (board and turns) to localStorage
 		saveGameToStorage({
 			board: newBoard,
+
 			turns: newTurns,
 		});
 
@@ -54,11 +61,13 @@ export function useGameLogic() {
 		if (newResults) {
 			confetti();
 
-			setResults(newResults);
+			setWinner(newResults);
 		}
 		// If there is no winner but the game has ended (tie), set the results to false
 		else if (checkEndGame(newBoard)) {
 			setResults(false);
+
+			setWinner("-");
 		}
 	};
 
@@ -69,6 +78,8 @@ export function useGameLogic() {
 		setTurns(TURNS.X); // Set the starting turn to 'X'
 
 		setResults(null); // Reset the game results to null
+
+		setWinner(""); // Reset the winner to nobody
 
 		resetGameStorage(); // Clear the game data from localStorage
 	};
@@ -96,5 +107,7 @@ export function useGameLogic() {
 	};
 
 	// Return the required state variables and functions as the hook's public interface
-	return { results, turns, board, updateBoard, resetGame };
-}
+	return { results, winner, turns, board, updateBoard, resetGame };
+};
+
+export { useGameLogic };
