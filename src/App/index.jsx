@@ -4,7 +4,7 @@ import { Square } from "../Components/Square";
 import { Results } from "../Components/Results";
 import { useGameLogic } from "../Hooks/useGameLogic";
 
-// App Component
+// App
 function App() {
 	// Call the custom hook to get the game logics
 	const { board, turns, results, winner, resetGame, updateBoard } = useGameLogic();

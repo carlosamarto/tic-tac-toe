@@ -1,8 +1,8 @@
 import { Square } from "../Square";
 import PropTypes from "prop-types";
 
+// Render UI Component
 function Results({ resetGame, results, winner }) {
-	// Render UI Component
 	return (
 		<>
 			<section className="results">

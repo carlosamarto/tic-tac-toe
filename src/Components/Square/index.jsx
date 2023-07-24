@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
+// Render UI Component
 const Square = ({ children, index, isSelected, updateBoard, checked }) => {
-	// Render UI Component
 	return (
 		<>
 			<div

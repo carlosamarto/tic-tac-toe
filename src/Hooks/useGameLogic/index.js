@@ -4,7 +4,7 @@ import { TURNS } from "../../Utils/Constants";
 import { WINNER_COMBOS } from "../../Utils/Constants";
 import { saveGameToStorage, resetGameStorage } from "../../Utils/Storage";
 
-// Custom hook for managing the game logic
+// Custom hook
 const useGameLogic = () => {
 	// State variables using React's useState hook
 	const [results, setResults] = useState(null); // To keep track of game results (null for ongoing game, 'X' or 'O' for winner, and false for a tie)
